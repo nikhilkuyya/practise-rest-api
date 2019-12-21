@@ -1,0 +1,14 @@
+io/swagger/api/SignupApiController.class
+io/swagger/api/ApiOriginFilter.class
+practise/myproman/api/model/SignupUserRequest.class
+io/swagger/Swagger2SpringBoot.class
+io/swagger/api/ApiResponseMessage.class
+io/swagger/api/SignupApi.class
+io/swagger/Swagger2SpringBoot$ExitException.class
+io/swagger/configuration/HomeController.class
+practise/myproman/api/controller/SignupUserController.class
+practise/myproman/api/model/SignupUserResponse.class
+io/swagger/api/NotFoundException.class
+io/swagger/configuration/SwaggerDocumentationConfig.class
+io/swagger/RFC3339DateFormat.class
+io/swagger/api/ApiException.class
