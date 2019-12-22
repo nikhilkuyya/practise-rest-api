@@ -1,0 +1,20 @@
+server:
+  servlet:
+    port: 8080
+    contextPath: /api
+spring:
+  application:
+    name: myproman-api
+
+ datasource:
+  driverClassName: org.postgresql.hibernate
+  url: jdbc-postgresql://localhost:5432/myproman
+  username: postgres
+  password: nikhilKuyya
+
+ jpa:
+  properties:
+    hibernate:
+      temp:
+        use_jdbc_metadata_defaults: false
+  database-platform: org.hibernate.dialect.PostgreSQL12Dialect
