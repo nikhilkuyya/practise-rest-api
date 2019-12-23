@@ -1,5 +1,6 @@
 package practise.myproman.api.service.entity;
 
+import java.io.Serializable;
 import java.time.ZonedDateTime;
 
 import javax.persistence.*;
@@ -15,7 +16,7 @@ import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name = "users", schema = "proman")
-public class UserEntity {
+public class UserEntity implements Serializable {
 
     @Id
     @Column(name = "id")
@@ -99,7 +100,7 @@ public class UserEntity {
     private ZonedDateTime modifiedAt;
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(final Object obj) {
         return new EqualsBuilder().append(this, obj).isEquals();
     }
 
@@ -117,7 +118,7 @@ public class UserEntity {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -125,7 +126,7 @@ public class UserEntity {
         return uuid;
     }
 
-    public void setUuid(String uuid) {
+    public void setUuid(final String uuid) {
         this.uuid = uuid;
     }
 
@@ -133,7 +134,7 @@ public class UserEntity {
         return role;
     }
 
-    public void setRole(RoleEntity role) {
+    public void setRole(final RoleEntity role) {
         this.role = role;
     }
 
@@ -141,7 +142,7 @@ public class UserEntity {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
 
@@ -149,7 +150,7 @@ public class UserEntity {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(final String password) {
         this.password = password;
     }
 
@@ -157,7 +158,7 @@ public class UserEntity {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
@@ -165,7 +166,7 @@ public class UserEntity {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
@@ -173,7 +174,7 @@ public class UserEntity {
         return mobilePhone;
     }
 
-    public void setMobilePhone(String mobilePhone) {
+    public void setMobilePhone(final String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
 
@@ -181,7 +182,7 @@ public class UserEntity {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(final int status) {
         this.status = status;
     }
 
@@ -189,7 +190,7 @@ public class UserEntity {
         return failedLoginCount;
     }
 
-    public void setFailedLoginCount(int failedLoginCount) {
+    public void setFailedLoginCount(final int failedLoginCount) {
         this.failedLoginCount = failedLoginCount;
     }
 
@@ -197,7 +198,7 @@ public class UserEntity {
         return lastPasswordChangeAt;
     }
 
-    public void setLastPasswordChangeAt(ZonedDateTime lastPasswordChangeAt) {
+    public void setLastPasswordChangeAt(final ZonedDateTime lastPasswordChangeAt) {
         this.lastPasswordChangeAt = lastPasswordChangeAt;
     }
 
@@ -205,7 +206,7 @@ public class UserEntity {
         return lastLoginAt;
     }
 
-    public void setLastLoginAt(ZonedDateTime lastLoginAt) {
+    public void setLastLoginAt(final ZonedDateTime lastLoginAt) {
         this.lastLoginAt = lastLoginAt;
     }
 
@@ -213,7 +214,7 @@ public class UserEntity {
         return salt;
     }
 
-    public void setSalt(String salt) {
+    public void setSalt(final String salt) {
         this.salt = salt;
     }
 
@@ -221,7 +222,7 @@ public class UserEntity {
         return version;
     }
 
-    public void setVersion(Long version) {
+    public void setVersion(final Long version) {
         this.version = version;
     }
 
@@ -229,7 +230,7 @@ public class UserEntity {
         return createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(final String createdBy) {
         this.createdBy = createdBy;
     }
 
@@ -237,7 +238,7 @@ public class UserEntity {
         return createdAt;
     }
 
-    public void setCreatedAt(ZonedDateTime createdAt) {
+    public void setCreatedAt(final ZonedDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -245,7 +246,7 @@ public class UserEntity {
         return modifiedBy;
     }
 
-    public void setModifiedBy(String modifiedBy) {
+    public void setModifiedBy(final String modifiedBy) {
         this.modifiedBy = modifiedBy;
     }
 
@@ -253,7 +254,7 @@ public class UserEntity {
         return modifiedAt;
     }
 
-    public void setModifiedAt(ZonedDateTime modifiedAt) {
+    public void setModifiedAt(final ZonedDateTime modifiedAt) {
         this.modifiedAt = modifiedAt;
     }
 
