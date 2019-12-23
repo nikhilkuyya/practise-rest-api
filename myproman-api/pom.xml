@@ -65,7 +65,6 @@
             <generateModels>true</generateModels>
             <modelPackage>practise.myproman.api.model</modelPackage>
             <configOptions>
-              <modelFolder>${basedir}/src/main/java</modelFolder>
               <java8>true</java8>
               <sourceFolder>.</sourceFolder>
               <dateLibrary>java8</dateLibrary>
@@ -100,6 +99,16 @@
             </goals>
             <configuration>
               <inputSpec>${project.basedir}/src/main/resources/endpoints/signup.json</inputSpec>
+              <language>spring</language>
+            </configuration>
+          </execution>
+          <execution>
+            <id>useradmin</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <inputSpec>${project.basedir}/src/main/resources/endpoints/useradmin.json</inputSpec>
               <language>spring</language>
             </configuration>
           </execution>

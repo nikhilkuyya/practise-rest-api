@@ -16,7 +16,8 @@ import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name = "users", schema = "proman")
-public class UserEntity implements Serializable {
+@NamedQueries({ @NamedQuery(name = "userByUUID", query = "select user from UserEntity user where user.uuid == :uuid") })
+public final class UserEntity implements Serializable {
 
     @Id
     @Column(name = "id")
@@ -31,7 +32,7 @@ public class UserEntity implements Serializable {
 
     @ManyToOne
     @NotNull
-    @Column(name = "role_id")
+    @JoinColumn(name = "role_id")
     private RoleEntity role;
 
     @Version
