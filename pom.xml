@@ -33,9 +33,9 @@
   </dependencies>
 
   <modules>
-    <module>myproman-api</module>
     <module>myproman-db</module>
     <module>myproman-service</module>
+    <module>myproman-api</module>
   </modules>
   <build>
     <pluginManagement>
