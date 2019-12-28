@@ -16,7 +16,7 @@ import javax.validation.constraints.*;
  * RoleDetailsType
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-25T18:23:50.393+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-27T20:36:33.217+05:30")
 
 public class RoleDetailsType   {
   @JsonProperty("id")
