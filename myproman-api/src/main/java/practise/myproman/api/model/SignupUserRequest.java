@@ -15,7 +15,7 @@ import javax.validation.constraints.*;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-27T20:36:32.685+05:30")
 
-public class SignupUserRequest   {
+public class SignupUserRequest {
   @JsonProperty("first_name")
   private String firstName = null;
 
@@ -38,11 +38,11 @@ public class SignupUserRequest   {
 
   /**
    * First name of the new user
+   * 
    * @return firstName
-  **/
+   **/
   @ApiModelProperty(required = true, value = "First name of the new user")
   @NotNull
-
 
   public String getFirstName() {
     return firstName;
@@ -59,11 +59,11 @@ public class SignupUserRequest   {
 
   /**
    * Get lastName
+   * 
    * @return lastName
-  **/
+   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
   public String getLastName() {
     return lastName;
@@ -80,11 +80,11 @@ public class SignupUserRequest   {
 
   /**
    * Email address of the new user
+   * 
    * @return emailAddress
-  **/
+   **/
   @ApiModelProperty(required = true, value = "Email address of the new user")
   @NotNull
-
 
   public String getEmailAddress() {
     return emailAddress;
@@ -101,11 +101,11 @@ public class SignupUserRequest   {
 
   /**
    * Password of the new user
+   * 
    * @return password
-  **/
+   **/
   @ApiModelProperty(required = true, value = "Password of the new user")
   @NotNull
-
 
   public String getPassword() {
     return password;
@@ -122,11 +122,11 @@ public class SignupUserRequest   {
 
   /**
    * Mobile Number of the new user
+   * 
    * @return mobileNumber
-  **/
+   **/
   @ApiModelProperty(required = true, value = "Mobile Number of the new user")
   @NotNull
-
 
   public String getMobileNumber() {
     return mobileNumber;
@@ -135,7 +135,6 @@ public class SignupUserRequest   {
   public void setMobileNumber(String mobileNumber) {
     this.mobileNumber = mobileNumber;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,11 +145,11 @@ public class SignupUserRequest   {
       return false;
     }
     SignupUserRequest signupUserRequest = (SignupUserRequest) o;
-    return Objects.equals(this.firstName, signupUserRequest.firstName) &&
-        Objects.equals(this.lastName, signupUserRequest.lastName) &&
-        Objects.equals(this.emailAddress, signupUserRequest.emailAddress) &&
-        Objects.equals(this.password, signupUserRequest.password) &&
-        Objects.equals(this.mobileNumber, signupUserRequest.mobileNumber);
+    return Objects.equals(this.firstName, signupUserRequest.firstName)
+        && Objects.equals(this.lastName, signupUserRequest.lastName)
+        && Objects.equals(this.emailAddress, signupUserRequest.emailAddress)
+        && Objects.equals(this.password, signupUserRequest.password)
+        && Objects.equals(this.mobileNumber, signupUserRequest.mobileNumber);
   }
 
   @Override
@@ -162,7 +161,7 @@ public class SignupUserRequest   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignupUserRequest {\n");
-    
+
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    emailAddress: ").append(toIndentedString(emailAddress)).append("\n");
@@ -183,4 +182,3 @@ public class SignupUserRequest   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

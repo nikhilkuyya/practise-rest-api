@@ -22,7 +22,7 @@ public class SignupUserController {
     @Autowired
     private SignupRequestBusinessService userBusinessService;
 
-    @RequestMapping(method = RequestMethod.POST, path = "/signup", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, path = "/signup", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<SignupUserResponse> signup(final SignupUserRequest signupUserRequest) {
         final UserEntity userEntity = new UserEntity();
         userEntity.setUuid(UUID.randomUUID().toString());

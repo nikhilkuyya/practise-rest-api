@@ -42,6 +42,7 @@
       <artifactId>springfox-swagger-ui</artifactId>
       <version>2.9.2</version>
     </dependency>
+
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
@@ -65,7 +66,6 @@
             <generateModels>true</generateModels>
             <modelPackage>practise.myproman.api.model</modelPackage>
             <configOptions>
-              <modelFolder>${basedir}/src/main/java</modelFolder>
               <java8>true</java8>
               <sourceFolder>.</sourceFolder>
               <dateLibrary>java8</dateLibrary>
@@ -76,6 +76,24 @@
     </pluginManagement>
 
     <plugins>
+
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>${project.basedir}/src/main/java/practise/myproman/api/model</directory>
+              <includes>
+                <include>*.java</include>
+              </includes>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+
+
       <plugin>
         <groupId>io.swagger</groupId>
         <artifactId>swagger-codegen-maven-plugin</artifactId>
@@ -103,24 +121,19 @@
               <language>spring</language>
             </configuration>
           </execution>
+          <execution>
+            <id>useradmin</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <inputSpec>${project.basedir}/src/main/resources/endpoints/useradmin.json</inputSpec>
+              <language>spring</language>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 
-      <plugin>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>3.1.0</version>
-        <configuration>
-          <filesets>
-            <fileset>
-              <directory>${project.basedir}/src/main/java/practise/myproman/api/model</directory>
-              <includes>
-                <include>*.java</include>
-              </includes>
-              <followSymlinks>false</followSymlinks>
-            </fileset>
-          </filesets>
-        </configuration>
-      </plugin>
 
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
@@ -144,6 +157,7 @@
           </execution>
         </executions>
       </plugin>
+
     </plugins>
 
 
