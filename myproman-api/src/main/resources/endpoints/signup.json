@@ -22,8 +22,8 @@
         "operationId": "signupUser",
         "summary": "SignUp User",
         "description": "Each user who needs access to proman need to signup with details mentioned",
-        "consumes": ["application/json"],
-        "produces": ["application/json"],
+        "consumes": ["application/json;charset=UTF-8"],
+        "produces": ["application/json;charset=UTF-8"],
         "parameters": [
           {
             "$ref": "#/parameters/ClientId"

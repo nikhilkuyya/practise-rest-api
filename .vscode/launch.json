@@ -1,11 +1,11 @@
 {
-    "configurations": [
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - MyPromanApiServer",
-            "request": "launch",
-            "mainClass": "practise.myproman.api.MyPromanApiServer",
-            "projectName": "myproman-api"
-        }
-    ]
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - MyPromanApiServer",
+      "request": "launch",
+      "mainClass": "practise.myproman.api.MyPromanApiServer",
+      "projectName": "myproman-api"
+    }
+  ]
 }
