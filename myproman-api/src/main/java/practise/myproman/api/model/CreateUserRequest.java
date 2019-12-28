@@ -10,12 +10,12 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * SignupUserRequest
+ * CreateUserRequest
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-27T20:36:32.685+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-27T20:36:33.217+05:30")
 
-public class SignupUserRequest   {
+public class CreateUserRequest   {
   @JsonProperty("first_name")
   private String firstName = null;
 
@@ -25,13 +25,10 @@ public class SignupUserRequest   {
   @JsonProperty("email_address")
   private String emailAddress = null;
 
-  @JsonProperty("password")
-  private String password = null;
-
   @JsonProperty("mobile_number")
   private String mobileNumber = null;
 
-  public SignupUserRequest firstName(String firstName) {
+  public CreateUserRequest firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -52,16 +49,16 @@ public class SignupUserRequest   {
     this.firstName = firstName;
   }
 
-  public SignupUserRequest lastName(String lastName) {
+  public CreateUserRequest lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
 
   /**
-   * Get lastName
+   * Last name of the new user
    * @return lastName
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Last name of the new user")
   @NotNull
 
 
@@ -73,7 +70,7 @@ public class SignupUserRequest   {
     this.lastName = lastName;
   }
 
-  public SignupUserRequest emailAddress(String emailAddress) {
+  public CreateUserRequest emailAddress(String emailAddress) {
     this.emailAddress = emailAddress;
     return this;
   }
@@ -94,37 +91,16 @@ public class SignupUserRequest   {
     this.emailAddress = emailAddress;
   }
 
-  public SignupUserRequest password(String password) {
-    this.password = password;
-    return this;
-  }
-
-  /**
-   * Password of the new user
-   * @return password
-  **/
-  @ApiModelProperty(required = true, value = "Password of the new user")
-  @NotNull
-
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public SignupUserRequest mobileNumber(String mobileNumber) {
+  public CreateUserRequest mobileNumber(String mobileNumber) {
     this.mobileNumber = mobileNumber;
     return this;
   }
 
   /**
-   * Mobile Number of the new user
+   * Mobile number of the new user
    * @return mobileNumber
   **/
-  @ApiModelProperty(required = true, value = "Mobile Number of the new user")
+  @ApiModelProperty(required = true, value = "Mobile number of the new user")
   @NotNull
 
 
@@ -145,28 +121,26 @@ public class SignupUserRequest   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SignupUserRequest signupUserRequest = (SignupUserRequest) o;
-    return Objects.equals(this.firstName, signupUserRequest.firstName) &&
-        Objects.equals(this.lastName, signupUserRequest.lastName) &&
-        Objects.equals(this.emailAddress, signupUserRequest.emailAddress) &&
-        Objects.equals(this.password, signupUserRequest.password) &&
-        Objects.equals(this.mobileNumber, signupUserRequest.mobileNumber);
+    CreateUserRequest createUserRequest = (CreateUserRequest) o;
+    return Objects.equals(this.firstName, createUserRequest.firstName) &&
+        Objects.equals(this.lastName, createUserRequest.lastName) &&
+        Objects.equals(this.emailAddress, createUserRequest.emailAddress) &&
+        Objects.equals(this.mobileNumber, createUserRequest.mobileNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, emailAddress, password, mobileNumber);
+    return Objects.hash(firstName, lastName, emailAddress, mobileNumber);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SignupUserRequest {\n");
+    sb.append("class CreateUserRequest {\n");
     
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    emailAddress: ").append(toIndentedString(emailAddress)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    mobileNumber: ").append(toIndentedString(mobileNumber)).append("\n");
     sb.append("}");
     return sb.toString();
