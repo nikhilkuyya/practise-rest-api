@@ -150,6 +150,11 @@
     "RequestId": {
       "type": "string",
       "description": "Used as correlation id while tracing for the request in the backend"
+    },
+    "UserStatusType": {
+      "type": "string",
+      "enum": ["REGISTERED", "ACTIVE", "INACTIVE", "LOCKED"],
+      "description": "Status of the User"
     }
   }
 }
