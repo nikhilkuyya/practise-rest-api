@@ -16,7 +16,8 @@ import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name = "users", schema = "proman")
-@NamedQueries({ @NamedQuery(name = "userByUUID", query = "select user from UserEntity user where user.uuid = :uuid") })
+@NamedQueries({ @NamedQuery(name = "userByUUID", query = "select user from UserEntity user where user.uuid = :uuid"),
+        @NamedQuery(name = "userByEmail", query = "select user from UserEntity user where user.email = :email") })
 public final class UserEntity implements Serializable {
 
     @Id

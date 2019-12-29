@@ -1,6 +1,7 @@
 package practise.myproman.api.service.dao;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,21 @@ public class UserDao {
     }
 
     public UserEntity getUser(final String userUUID) {
-        return entityManager.createNamedQuery("userByUUID", UserEntity.class).setParameter("uuid", userUUID)
-                .getSingleResult();
+        try {
+            return entityManager.createNamedQuery("userByUUID", UserEntity.class).setParameter("uuid", userUUID)
+                    .getSingleResult();
+        } catch (NoResultException nre) {
+            return null;
+        }
     }
 
+    public UserEntity getUserByEmail(final String email) {
+        try {
+            return entityManager.createNamedQuery("userByEmail", UserEntity.class).setParameter("email", email)
+                    .getSingleResult();
+        } catch (NoResultException nre) {
+            return null;
+        }
+
+    }
 }

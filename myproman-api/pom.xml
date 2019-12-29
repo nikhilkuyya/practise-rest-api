@@ -121,6 +121,7 @@
               <language>spring</language>
             </configuration>
           </execution>
+
           <execution>
             <id>useradmin</id>
             <goals>
@@ -128,6 +129,17 @@
             </goals>
             <configuration>
               <inputSpec>${project.basedir}/src/main/resources/endpoints/useradmin.json</inputSpec>
+              <language>spring</language>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>authentication</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <inputSpec>${project.basedir}/src/main/resources/endpoints/authentication.json</inputSpec>
               <language>spring</language>
             </configuration>
           </execution>
