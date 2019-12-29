@@ -22,7 +22,7 @@ public final class UserEntity implements Serializable {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NonNull
+    @NotNull
     private int id;
 
     @Column(name = "uuid")
@@ -31,7 +31,6 @@ public final class UserEntity implements Serializable {
     private String uuid;
 
     @ManyToOne
-    @NotNull
     @JoinColumn(name = "role_id")
     private RoleEntity role;
 
@@ -78,7 +77,7 @@ public final class UserEntity implements Serializable {
     @Column(name = "failed_login_count")
     private int failedLoginCount;
 
-    @Column(name = "last_password_chage_at")
+    @Column(name = "last_password_change_at")
     private ZonedDateTime lastPasswordChangeAt;
 
     @Column(name = "last_login_at")
@@ -93,7 +92,7 @@ public final class UserEntity implements Serializable {
     @Size(max = 100)
     private String modifiedBy;
 
-    @Column(name = "crated_at")
+    @Column(name = "created_at")
     @NonNull
     private ZonedDateTime createdAt;
 

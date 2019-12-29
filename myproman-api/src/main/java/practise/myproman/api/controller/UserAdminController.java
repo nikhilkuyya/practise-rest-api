@@ -13,6 +13,7 @@ import practise.myproman.api.model.UserDetailsResponse;
 import practise.myproman.api.model.UserStatusType;
 import practise.myproman.api.service.business.UserAdminBusinessService;
 import practise.myproman.api.service.entity.UserEntity;
+import practise.myproman.api.service.exception.ResourceNotFoundException;
 import practise.myproman.api.type.UserStatus;
 
 @RestController
@@ -22,9 +23,10 @@ public class UserAdminController {
     @Autowired
     private UserAdminBusinessService userAdminBusinessService;
 
-    @RequestMapping(method = RequestMethod.GET, path = "/users/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<UserDetailsResponse> getUser(@PathVariable("id") final String userUUID) {
-        final UserEntity userEntity = userAdminBusinessService.getUser(userUUID);
+    @RequestMapping(method = RequestMethod.GET, path = "/users/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<UserDetailsResponse> getUser(@PathVariable("id") final String id)
+            throws ResourceNotFoundException {
+        final UserEntity userEntity = userAdminBusinessService.getUser(id);
 
         final UserDetailsResponse userDetailsResponse = new UserDetailsResponse().firstName(userEntity.getFirstName())
                 .lastName(userEntity.getLastName()).emailAddress(userEntity.getEmail())

@@ -6,10 +6,7 @@
     "description": "## API of User Administration Services\n\nThis specification describes the endpoints, request/response model of the User Administration API. This API provides REST resources to manage users of Proman application.\n\nThe resources should only be used over HTTPS (SSL) and can be accessed via the following base URL:\n\n```\n  https://proman.io/api/v1/\n```\n\n## API usage guidelines\n\nThis section describes general rules and guidelines for using REST based services offered by Proman.\n\n  * All resources can only be accessed via HTTPS and a respective HTTP Basic Authentication header is also required.\n  * Proman reserves the right to add new parameters without further notice (in request and response).\n  * Proman reserves the right to add new error codes without further notice. Proman will thereby stick to the HTTP STATUS CODES as defined by W3C.\n  * Proman reserves the right to enhance enumerations by new values.\n  * Proman reserves the right to increase the \"maxItem\" settings of arrays without further notice.\n  \nEach consumer needs to tolerant about changes to the API as much as possible ([see Tolerant Reader Pattern](http://martinfowler.com/bliki/TolerantReader.html))\n\n## Business definitions\nUser Administration APIs can only be called by authorized users who have administrator rights. These APIs can be used to create new user, modify an existing user, deactivate an active user, activate registered or inactive user and lock user. The users once created will have an access to Proman application provided they are being permitted so through proper access-level permissions.\n## Release Notes \n### 1.0.0\n* Initial version\n"
   },
   "host": "proman.io",
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["http", "https"],
   "basePath": "/api/v1/users",
   "tags": [
     {
@@ -21,24 +18,17 @@
     "/users": {
       "post": {
         "operationId": "createUser",
-        "tags": [
-          "API#003 Users"
-        ],
+        "tags": ["API#003 Users"],
         "security": [
           {
-            "Authorization": [
-
-            ]
+            "Authorization": []
           }
         ],
         "summary": "User Administration - Create new User",
         "description": "API to create new user in Proman application\n",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json;charset=UTF-8"],
+        "produces": ["application/json;charset=UTF-8"],
+
         "parameters": [
           {
             "$ref": "#/parameters/ClientId"
@@ -125,21 +115,15 @@
       },
       "get": {
         "operationId": "getUsers",
-        "tags": [
-          "API#003 Users"
-        ],
+        "tags": ["API#003 Users"],
         "security": [
           {
-            "Authorization": [
-
-            ]
+            "Authorization": []
           }
         ],
         "summary": "User Administration - Get all Users",
         "description": "API to get all users of Proman application\n",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "$ref": "#/parameters/ClientId"
@@ -172,12 +156,7 @@
             "in": "query",
             "name": "status",
             "type": "string",
-            "enum": [
-              "REGISTERED",
-              "ACTIVE",
-              "INACTIVE",
-              "LOCKED"
-            ],
+            "enum": ["REGISTERED", "ACTIVE", "INACTIVE", "LOCKED"],
             "required": false,
             "description": "query to filter the results based on specified status"
           }
@@ -258,21 +237,15 @@
     "/users/{id}": {
       "get": {
         "operationId": "getUser",
-        "tags": [
-          "API#003 Users"
-        ],
+        "tags": ["API#003 Users"],
         "security": [
           {
-            "Authorization": [
-
-            ]
+            "Authorization": []
           }
         ],
         "summary": "User Administration - Get an existing User",
         "description": "API to get an existing user of Proman application\n",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "$ref": "#/parameters/UserId"
@@ -346,24 +319,17 @@
       },
       "put": {
         "operationId": "updateUser",
-        "tags": [
-          "API#003 Users"
-        ],
+        "tags": ["API#003 Users"],
         "security": [
           {
-            "Authorization": [
-
-            ]
+            "Authorization": []
           }
         ],
         "summary": "User Administration - Update an existing User",
         "description": "API to update an existing user in Proman application\n",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json;charset=UTF-8"],
+        "produces": ["application/json;charset=UTF-8"],
+
         "parameters": [
           {
             "$ref": "#/parameters/UserId"
@@ -455,24 +421,16 @@
       },
       "patch": {
         "operationId": "patchUser",
-        "tags": [
-          "API#003 Users"
-        ],
+        "tags": ["API#003 Users"],
         "security": [
           {
-            "Authorization": [
-
-            ]
+            "Authorization": []
           }
         ],
         "summary": "User Administration - Partial update of an existing user",
         "description": "API to partial update of an existing user of Proman application\n",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json;charset=UTF-8"],
+        "produces": ["application/json;charset=UTF-8"],
         "parameters": [
           {
             "$ref": "#/parameters/UserId"
@@ -561,24 +519,17 @@
       },
       "delete": {
         "operationId": "deleteUser",
-        "tags": [
-          "API#003 Users"
-        ],
+        "tags": ["API#003 Users"],
         "security": [
           {
-            "Authorization": [
-
-            ]
+            "Authorization": []
           }
         ],
         "summary": "User Administration - Remove an existing user",
         "description": "API to remove an existing user\n",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json;charset=UTF-8"],
+        "produces": ["application/json;charset=UTF-8"],
+
         "parameters": [
           {
             "$ref": "#/parameters/UserId"
@@ -702,12 +653,7 @@
           "description": "List of users"
         }
       },
-      "required": [
-        "page",
-        "limit",
-        "total_count",
-        "users"
-      ],
+      "required": ["page", "limit", "total_count", "users"],
       "example": null
     },
     "UserSummaryType": {
@@ -829,10 +775,7 @@
           "description": "Role name of the user"
         }
       },
-      "required": [
-        "id",
-        "name"
-      ]
+      "required": ["id", "name"]
     },
     "RoleDetailsType": {
       "type": "object",
@@ -853,11 +796,7 @@
           "description": "Permissions assigned to the user"
         }
       },
-      "required": [
-        "id",
-        "name",
-        "permissions"
-      ]
+      "required": ["id", "name", "permissions"]
     },
     "PermissionsType": {
       "type": "object",
@@ -871,10 +810,7 @@
           "description": "Permission name of the user"
         }
       },
-      "required": [
-        "id",
-        "name"
-      ]
+      "required": ["id", "name"]
     },
     "CreateUserRequest": {
       "type": "object",
@@ -896,12 +832,7 @@
           "description": "Mobile number of the new user"
         }
       },
-      "required": [
-        "first_name",
-        "last_name",
-        "email_address",
-        "mobile_number"
-      ],
+      "required": ["first_name", "last_name", "email_address", "mobile_number"],
       "example": {
         "first_name": "Proman",
         "last_name": "Administrator",
@@ -924,9 +855,7 @@
           "description": "List of permission ids to be mapped to the new user"
         }
       },
-      "required": [
-        "id"
-      ]
+      "required": ["id"]
     },
     "CreateUserResponse": {
       "type": "object",
@@ -939,10 +868,7 @@
           "$ref": "#/definitions/UserStatusType"
         }
       },
-      "required": [
-        "id",
-        "status"
-      ],
+      "required": ["id", "status"],
       "example": {
         "id": "7d174a25-ba31-45a8-85b4-b06ffc9d5f8f",
         "status": "ACTIVE"
@@ -978,11 +904,7 @@
         "mobile_number": "+91 1234567890",
         "role": {
           "id": 100,
-          "permissions": [
-            121,
-            122,
-            142
-          ]
+          "permissions": [121, 122, 142]
         }
       }
     },
@@ -998,20 +920,12 @@
         "op": {
           "type": "string",
           "description": "Type of operation",
-          "enum": [
-            "replace",
-            "add",
-            "remove"
-          ]
+          "enum": ["replace", "add", "remove"]
         },
         "path": {
           "type": "string",
           "description": "Resource path whose state to be modified",
-          "enum": [
-            "status",
-            "role",
-            "permissions"
-          ]
+          "enum": ["status", "role", "permissions"]
         },
         "value": {
           "type": "string",
@@ -1033,13 +947,7 @@
     },
     "UserStatusType": {
       "type": "string",
-      "enum": [
-        "REGISTERED",
-        "ACTIVE",
-        "INACTIVE",
-        "LOCKED",
-        "DELETED"
-      ],
+      "enum": ["REGISTERED", "ACTIVE", "INACTIVE", "LOCKED", "DELETED"],
       "description": "Status of the User"
     },
     "ErrorResponse": {
@@ -1054,10 +962,7 @@
           "description": "Error message stating the reason"
         }
       },
-      "required": [
-        "code",
-        "message"
-      ],
+      "required": ["code", "message"],
       "example": {
         "code": "USR-001",
         "message": "Email address already exist"
